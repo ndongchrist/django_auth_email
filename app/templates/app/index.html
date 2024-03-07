@@ -2,7 +2,21 @@
 
 
 {% block content %}
-    <button type="submit"><a href="">Register</a></button>
-    <button type="submit"><a href="">Login</a></button>
-    <button type="submit"><a href="">Se Deconnecter</a></button>
+
+
+{% for message in messages %}
+    <strong>{{message}}</strong>
+{% endfor %}
+
+   {% if user.is_authenticated %}
+     <h4>Bonjour {{ user.firstname }}, Welcome to GoldenBrain</h4>
+     <br>
+     <button type="submit"><a href="logout">Se Deconnecter</a></button>
+
+    {% else %}
+    <button type="submit"><a href="register">Register</a></button>
+    <button type="submit"><a href="login">Login</a></button>
+   {% endif %}
+
+    
 {% endblock content %}

@@ -1,10 +1,14 @@
-{% extends "./base.html" %}
+{% extends "base.html" %}
 
 
 {% block content %} 
 <h4>Login here</h4>
 
-<form action="/register" method="post">
+{% for message in messages %}
+    {{message}}
+{% endfor %}
+
+<form action="/login" method="post">
     {% csrf_token %}
 
     <label for="username">Username</label>

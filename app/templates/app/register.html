@@ -1,4 +1,4 @@
-{% extends "./base.html" %}
+{% extends "base.html" %}
 
 
 {% block content %}
@@ -10,26 +10,30 @@
 
         <label for="username">Username</label>
         <input placeholder="Enter You're Username" name="username" id="username" required>
-        <br>
+        <br><br>
 
         <label for="firstname">firstname</label>
         <input placeholder="Enter You're firstname" name="firstname" id="firstname" required>
-        <br>
+        <br><br>
 
         <label for="lastname">lastname</label>
-        <input placeholder="Enter Your Username" name="lastname" id="lastname" required>
-        <br>
+        <input placeholder="Enter Your lastname" name="lastname" id="lastname" required>
+        <br><br>
 
-        <label for="lastname">email</label>
+        <label for="email">email</label>
         <input placeholder="Enter Your email" name="email" id="email" required>
+        <br><br>
 
         <label for="password">password</label>
-        <input placeholder="Enter Your password" name="password" id="password" required>
-        <br>
+        <input type="password" placeholder="Enter Your password" name="password" id="password" required>
+        <br><br>
 
         <label for="password1">password1</label>
-        <input placeholder="Enter Your confirm password" name="password1" id="password1">
+        <input type="password" placeholder="Enter Your confirm password" name="password1" id="password1">
         <br>
+
+        <button type="submit">Register</button>
+
     </form>
           
 {% endblock content %}
