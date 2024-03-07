@@ -1,0 +1,35 @@
+{% extends "./base.html" %}
+
+
+{% block content %}
+
+    <h4>Register Here</h4>
+
+    <form action="/register" method="post">
+        {% csrf_token %}
+
+        <label for="username">Username</label>
+        <input placeholder="Enter You're Username" name="username" id="username" required>
+        <br>
+
+        <label for="firstname">firstname</label>
+        <input placeholder="Enter You're firstname" name="firstname" id="firstname" required>
+        <br>
+
+        <label for="lastname">lastname</label>
+        <input placeholder="Enter Your Username" name="lastname" id="lastname" required>
+        <br>
+
+        <label for="lastname">email</label>
+        <input placeholder="Enter Your email" name="email" id="email" required>
+
+        <label for="password">password</label>
+        <input placeholder="Enter Your password" name="password" id="password" required>
+        <br>
+
+        <label for="password1">password1</label>
+        <input placeholder="Enter Your confirm password" name="password1" id="password1">
+        <br>
+    </form>
+          
+{% endblock content %}

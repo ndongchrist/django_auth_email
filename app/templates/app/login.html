@@ -1,0 +1,21 @@
+{% extends "./base.html" %}
+
+
+{% block content %} 
+<h4>Login here</h4>
+
+<form action="/register" method="post">
+    {% csrf_token %}
+
+    <label for="username">Username</label>
+    <input placeholder="Enter You're Username" name="username" id="username" required>
+    <br>
+
+    <label for="password">Password</label>
+    <input placeholder="Enter Your password" name="password" id="passxord" required>
+    <br>
+
+    <button type="submit">Login</button>
+
+</form>
+{% endblock content %}
