@@ -17,6 +17,18 @@ def register(request):
         password = request.POST['password']
         password1 = request.POST['password1']
 
+        if User.objects.filter(username=username):
+            messages.error(request, 'Username already taken')
+            return redirect('register')
+        if User.objects.filter(email = email):
+            messages.error(request, 'email already used')
+            return redirect('register')
+        if not username.isalnum():
+            return redirect('register')
+        if password != password1:
+            messages.error(request, 'Passwords not matching')
+            return redirect('register')
+
         my_user = User.objects.create_user(username, email, password)
         my_user.first_name = firstname
         my_user.last_name = lastname
